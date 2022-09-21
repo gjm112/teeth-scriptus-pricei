@@ -5,13 +5,9 @@ library(Momocs)
 library(fdasrvf)
 
 #path <- "/Users/gregorymatthews/Dropbox/gladysvale/images_20210622/Extant"
-path <- "/Users/gregorymatthews/Dropbox/teeth-scriptus-pricei/data/pricei_bw/images/"
+path <- "/Users/gregorymatthews/Dropbox/teeth-scriptus-pricei/data/pricei_bw/images/Fossil/Tragelaphini/Tragelaphus/pricei/LM1/bw"
 file_list_BW_extant <- list.files(path, recursive = TRUE, full.names = TRUE)
 
-
-
-remove <- c(grep("DSCN2815.JPG",file_list_BW_extant), grep("DSCN2831.JPG",file_list_BW_extant), grep("DSCN4754.JPG",file_list_BW_extant))
-file_list_BW_extant <- file_list_BW_extant[-remove]
 
 #Import the BW image files.
 start <- Sys.time()
