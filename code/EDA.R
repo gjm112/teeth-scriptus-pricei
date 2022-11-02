@@ -2,7 +2,7 @@ library(jpeg)
 library(tidyverse)
 library(dplyr)
 library(Momocs)
-library(fdasrvf)
+#library(fdasrvf)
 
 
 data <- list()
@@ -22,6 +22,9 @@ for (i in c("LM1","LM2","LM3","UM1","UM2","UM3")){
   data[[i]][["pricei"]] <- teeth_BW_train
   
 }
+
+
+
 
 
 
