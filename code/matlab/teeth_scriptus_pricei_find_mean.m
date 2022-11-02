@@ -22,7 +22,7 @@ for i=1:2:n_rows
 end
 
 %Compute mean
-%cd /Users/gregorymatthews/Dropbox/full_shape_classification_SRVF/data/gladysvale
+cd /Users/gregorymatthews/Dropbox/teeth-scriptus-pricei/code/matlab/
 [out_q,q,E] = FindElasticMeanFast(teeth_data)
 out_beta = q_to_curve(out_q)
 

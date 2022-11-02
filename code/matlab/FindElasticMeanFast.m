@@ -23,7 +23,7 @@ del = 0.5;
 %take the mean of the q's
 mu = sum(q,3)/n;
 %normalize the mean of the q's (to deal with scale)
-mu=mu/sqrt(InnerProd_Q(mu,mu));
+%mu=mu/sqrt(InnerProd_Q(mu,mu));
 %I think this centers?
 %this is our initial guess
 mu=ProjectC(mu);
