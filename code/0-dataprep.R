@@ -69,7 +69,10 @@ data_for_matlab[[i]][["pricei"]] <- do.call(rbind,data[[i]][["pricei"]])
 }
 
 
-write.csv(data_for_matlab[[i]][["scriptus"]],file = "/Users/gregorymatthews/Dropbox/teeth-scriptus-pricei/data/matlab/data_LM1_scriptus.csv", row.names = FALSE)
 
+for (i in c("LM1", "LM2", "LM3", "UM1", "UM2", "UM3")) {print(i)
+  write.csv(data_for_matlab[[i]][["scriptus"]],file = paste0("/Users/gregorymatthews/Dropbox/teeth-scriptus-pricei/data/matlab/data_",i,"_scriptus.csv"), row.names = FALSE)
+  write.csv(data_for_matlab[[i]][["pricei"]],file = paste0("/Users/gregorymatthews/Dropbox/teeth-scriptus-pricei/data/matlab/data_",i,"_pricei.csv"), row.names = FALSE)
+}
 
 
