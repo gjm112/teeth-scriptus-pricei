@@ -1,4 +1,10 @@
-function [mu,q,E] = FindElasticMeanFast(Data)
+%this function finds the elastic mean and lets you choose the initial guess
+%this is based on the fast version of FindElasticMeanFast
+function mu = FindElasticMeanFast_intialized(Data, initial_mu)
+
+%Data is the data you want to find the mean of
+%initial_mu is mean curve we would like to start out in (make sure it's NOT
+%in SRVF form already)
 
 %this closes all of the figures currently open
 close all;
@@ -6,11 +12,11 @@ close all;
 %sets the number of iterations
 Niter=50;
 
-%this gives the number of 2x100 matrices we have in our dataset
-n=size(Data,3);
-
 %how small E needs to be to stop
 eps = 0.05;
+
+%this gives the number of 2x100 matrices we have in our dataset
+n=size(Data,3);
 
 %this puts each of the curves into SRVF form 
 %figure(1); clf; 
@@ -20,13 +26,9 @@ for i=1:n
 end
 
 del = 0.5;
-%take the mean of the q's
-mu = sum(q,3)/n;
-%normalize the mean of the q's (to deal with scale)
-mu=mu/sqrt(InnerProd_Q(mu,mu));
-%I think this centers?
-%this is our initial guess
-mu=ProjectC(mu);
+
+%set initial value for mean 
+mu=initial_mu;
 
 %this is a loop that runs Niter (30 here) times 
 %this process is using the shooting method to find a geodesic
@@ -48,7 +50,8 @@ for iter =1:Niter
        %this is the discrepency between the point we want to reach and the
        %point we want to shoot to
        E(iter) = norm(vm,'fro');
-       %this uses the elastic shooting method to find a mean shape 
+       
+       %this uses the elastic shoot method to find a mean shape 
        %for this iteration 
        mu = ElasticShooting(mu,del*vm);
        
@@ -56,22 +59,10 @@ for iter =1:Niter
        if E(iter) < eps
            break
        end
-       
+          
        %add one to the iteration 
        iter=iter+1;
        %print out the discrepancy function 
        %we want this to reduce to 0, or as close to 0 as we can get
-       %E
-    
+          
 end
-
-%this plots the forbenious norm of the sum of the v's on each iteration 
-%we want this to close to 0 
-%figure(101); 
-%plot(E);
-
-%this plots the mean curve 
-figure('Name', 'Mean'); clf; 
-mean_p = q_to_curve(mu);
-plot(mean_p(1,:),mean_p(2,:),'LineWidth',2);
-axis equal;
