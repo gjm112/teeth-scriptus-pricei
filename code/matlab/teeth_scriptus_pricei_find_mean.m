@@ -1,3 +1,5 @@
+
+
 data_LM1_scriptus = readtable("/Users/gregorymatthews/Dropbox/teeth-scriptus-pricei/data/matlab/data_LM1_scriptus.csv")
 
 %get the number of rows and cols
