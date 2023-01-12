@@ -2,8 +2,10 @@ cd /Users/nastaranghorbani/Documents/teeth-scriptus-pricei/code/matlab
 toothtype = {"LM1","LM2","LM3","UM1","UM2","UM3"}
 species = {"pricei", "scriptus"}
 for t=1:6
-    for sp=1:2
-        data = readtable("/Users/nastaranghorbani/documents/teeth-scriptus-pricei/data/matlab/data_"+toothtype(t)+"_"+species(sp)+".csv")
+
+        data_scriptus = readtable("/Users/nastaranghorbani/documents/teeth-scriptus-pricei/data/matlab/data_"+toothtype(t)+"_scriptus.csv")
+        data_pricei = readtable("/Users/nastaranghorbani/documents/teeth-scriptus-pricei/data/matlab/data_"+toothtype(t)+"_pricei.csv")
+data=[data_scriptus; data_pricei]
         
         %get the number of rows and cols
         n_rows = size(data,1);
@@ -34,15 +36,14 @@ for t=1:6
 
         
         %Now save the average tooth
-        save("/Users/nastaranghorbani/Documents/teeth-scriptus-pricei/data/matlab/VV_"+toothtype(t)+"_"+species(sp)+".mat","VV")
-        save("/Users/nastaranghorbani/Documents/teeth-scriptus-pricei/data/matlab/PC_feat_"+toothtype(t)+"_"+species(sp)+".mat","PC_feat")
-        save("/Users/nastaranghorbani/Documents/teeth-scriptus-pricei/data/matlab/out_beta_"+toothtype(t)+"_"+species(sp)+".mat","out_beta")
+        save("/Users/nastaranghorbani/Documents/teeth-scriptus-pricei/data/matlab/VV_"+toothtype(t)+"_combined.mat","VV")
+        save("/Users/nastaranghorbani/Documents/teeth-scriptus-pricei/data/matlab/PC_feat_"+toothtype(t)+"_combined.mat","PC_feat")
+        save("/Users/nastaranghorbani/Documents/teeth-scriptus-pricei/data/matlab/out_beta_"+toothtype(t)+"_combined.mat","out_beta")
 
-csvwrite("/Users/nastaranghorbani/Documents/teeth-scriptus-pricei/data/matlab/VV_"+toothtype(t)+"_"+species(sp)+".csv",VV)
-csvwrite("/Users/nastaranghorbani/Documents/teeth-scriptus-pricei/data/matlab/PC_feat_"+toothtype(t)+"_"+species(sp)+".csv",PC_feat)
-csvwrite("/Users/nastaranghorbani/Documents/teeth-scriptus-pricei/data/matlab/out_beta_"+toothtype(t)+"_"+species(sp)+".csv",out_beta)
+csvwrite("/Users/nastaranghorbani/Documents/teeth-scriptus-pricei/data/matlab/VV_"+toothtype(t)+"_combined.csv",VV)
+csvwrite("/Users/nastaranghorbani/Documents/teeth-scriptus-pricei/data/matlab/PC_feat_"+toothtype(t)+"_combined.csv",PC_feat)
+csvwrite("/Users/nastaranghorbani/Documents/teeth-scriptus-pricei/data/matlab/out_beta_"+toothtype(t)+"_combined.csv",out_beta)
 
-    end
 end  
         
         
