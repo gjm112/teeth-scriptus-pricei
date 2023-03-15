@@ -1,0 +1,62 @@
+---
+title: |
+  Something about teeth
+short_title: "Filling in the Gaps"
+short_author: "Quang Nguyen and Gregory J. Matthews"
+authors: 
+- name: "Nastaran Ghorbani"
+  affiliation: "Department of Statistics & Data Science, Carnegie Mellon University"
+  city: "Pittsburgh, PA"
+  country: "USA"
+  email: "nmquang\\@cmu.edu" # optional
+- name: "Gregory J. Matthews"
+  affiliation: "Department of Mathematics and Statistics, Loyola University Chicago"
+  city: "Chicago, IL"
+  country: "USA"
+  email: "gmatthews1\\@luc.edu"
+abstract: |
+  Abstrat
+keywords: aging curve, baseball, multiple imputation, survival bias
+bibliography: "bibliography"
+output: 
+  rticles::rss_article:
+    keep_tex: true
+---
+
+```{r setup, echo=FALSE, message=FALSE}
+knitr::opts_chunk$set(
+	echo = FALSE,
+	fig.align = "center",
+	message = FALSE,
+	warning = FALSE
+)
+
+gjm <- function(x, color = "red") {
+  sprintf("\\textcolor{%s}{%s}", color, x)}
+```
+
+
+
+\newpage
+
+# Introduction {#sec:intro}
+Here is hwo you add a citation: @R2022language
+# Methods
+
+# Results
+
+# Conclusions
+
+# Acknowledgements {-}
+
+We thank the organizers of the 2022 Carnegie Mellon Sports Analytics Conference (CMSAC) for the opportunity to present this work and receive feedback.
+We thank the anonymous reviewers of the Reproducible Research Competition at CMSAC 2022 for the insightful comments and suggestions.
+We thank Kathryne Piazza for her help in the early stages of this project.
+
+# Supplementary Material {-}
+
+All code for reproducing the analyses in this paper is publicly available at https://github.com/qntkhvn/aging.
+
+# References
+
+
