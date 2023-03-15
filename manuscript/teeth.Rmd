@@ -40,7 +40,10 @@ gjm <- function(x, color = "red") {
 \newpage
 
 # Introduction {#sec:intro}
-Here is hwo you add a citation: @R2022language
+Here is how you add a citation: @R2022language
+
+
+
 # Methods
 
 # Results
@@ -49,13 +52,10 @@ Here is hwo you add a citation: @R2022language
 
 # Acknowledgements {-}
 
-We thank the organizers of the 2022 Carnegie Mellon Sports Analytics Conference (CMSAC) for the opportunity to present this work and receive feedback.
-We thank the anonymous reviewers of the Reproducible Research Competition at CMSAC 2022 for the insightful comments and suggestions.
-We thank Kathryne Piazza for her help in the early stages of this project.
 
 # Supplementary Material {-}
 
-All code for reproducing the analyses in this paper is publicly available at https://github.com/qntkhvn/aging.
+All code for reproducing the analyses in this paper is publicly available at 
 
 # References
 
