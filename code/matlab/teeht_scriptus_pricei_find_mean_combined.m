@@ -3,7 +3,7 @@ toothtype = {"LM1","LM2","LM3","UM1","UM2","UM3"}
 species = {"pricei", "scriptus"}
 for t=1:6
 
-        data_scriptus = readtable("/Users/nastaranghorbani/documents/teeth-scriptus-pricei/data/matlab/data_"+toothtype(t)+"_scriptus.csv")
+        data_scriptus = readtable("/Users/gregorymatthews/Dropbox/teeth-scriptus-pricei/data/matlab/data_"+toothtype(t)+"_scriptus.csv")
         data_pricei = readtable("/Users/nastaranghorbani/documents/teeth-scriptus-pricei/data/matlab/data_"+toothtype(t)+"_pricei.csv")
 data=[data_scriptus; data_pricei]
         
