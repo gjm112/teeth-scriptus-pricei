@@ -4,6 +4,8 @@ library(dplyr)
 library(Momocs)
 library(fdasrvf)
 
+#test
+
 
 data <- list()
 for (i in c("LM1","LM2","LM3","UM1","UM2","UM3")){
