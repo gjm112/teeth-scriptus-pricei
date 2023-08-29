@@ -16,6 +16,7 @@ for (i in c("LM1","LM2","LM3","UM1","UM2","UM3")){
   import_BW <- function(x){import_jpg(x)[[1]]}
   teeth_BW_train <- lapply(as.list(file_list_BW_extant), import_BW)
   names(teeth_BW_train) <- unlist(lapply(strsplit(file_list_BW_extant,"/"), function(x){x[[length(x)]]}))
+  names(teeth_BW_train) <- substring(names(teeth_BW_train),1,nchar(names(teeth_BW_train))-4)
   end <- Sys.time()
   end - start
   
@@ -29,7 +30,9 @@ for (i in c("LM1","LM2","LM3","UM1","UM2","UM3")){
   start <- Sys.time()
   import_BW <- function(x){import_jpg(x)[[1]]}
   teeth_BW_train <- lapply(as.list(file_list_BW_extant), import_BW)
-  names(teeth_BW_train) <- substring(file_list_BW_extant, unlist(gregexpr( "JPG",file_list_BW_extant)) - 9, unlist(gregexpr( "JPG",file_list_BW_extant)) - 2)
+  names(teeth_BW_train) <- unlist(lapply(strsplit(file_list_BW_extant,"/"), function(x){x[[length(x)]]}))
+  names(teeth_BW_train) <- substring(names(teeth_BW_train),1,nchar(names(teeth_BW_train))-4)
+    #substring(file_list_BW_extant, unlist(gregexpr( "JPG",file_list_BW_extant)) - 9, unlist(gregexpr( "JPG",file_list_BW_extant)) - 2)
   end <- Sys.time()
   end - start
   
