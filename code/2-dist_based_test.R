@@ -1,4 +1,4 @@
-load("./data/teethdata_scriptus_pricei.RData")
+load("/Users/nastaranghorbani/Documents/teeth-scriptus-pricei2/data/teethdata_scriptus_pricei.RData")
 pvals <- list()
 for (toothtype in c("LM1","LM2","LM3","UM1","UM2","UM3")){print(toothtype)
 
@@ -11,7 +11,7 @@ class <- c(rep("scriptus",n_scriptus),rep("pricei",n_pricei))
 #Run this script first in matlab: pairwise_dist_scriptus_pricei.m
 #Pariwise distances
 #First rows are scriptus and last rows are pricei
-ddd <- read.csv(paste0("/Users/gregorymatthews/Dropbox/teeth-scriptus-pricei/data/matlab/pairwise_distances_",toothtype,".csv"), header = FALSE)
+ddd <- read.csv(paste0("/Users/nastaranghorbani/Documents/teeth-scriptus-pricei2/data/matlab/pairwise_distances_",toothtype,".csv"), header = FALSE)
 ddd <- as.matrix(ddd)
 
 #Distrance based permutation testing.  

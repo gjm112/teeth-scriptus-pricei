@@ -10,7 +10,7 @@ library(fdasrvf)
 data <- list()
 for (i in c("LM1","LM2","LM3","UM1","UM2","UM3")){
   data[[i]] <- list()
-  path <- paste0("/Users/gregorymatthews/Dropbox/teeth-scriptus-pricei/data/pricei_bw/images/Fossil/Tragelaphini/Tragelaphus/pricei/",i,"/bw")
+  path <- paste0("/Users/nastaranghorbani/Documents/teeth-scriptus-pricei2/data/pricei_bw/images/Fossil/Tragelaphini/Tragelaphus/pricei/",i,"/bw")
   file_list_BW_extant <- list.files(path, recursive = TRUE, full.names = TRUE)
   
   #Import the BW image files.
@@ -25,7 +25,7 @@ for (i in c("LM1","LM2","LM3","UM1","UM2","UM3")){
   data[[i]][["pricei"]] <- teeth_BW_train
   
   
-  path <- paste0("/Users/gregorymatthews/Dropbox/teeth-scriptus-pricei/data/scriptus_bw/images/Extant/Tragelaphini/Tragelaphus/scriptus/",i,"/bw")
+  path <- paste0("/Users/nastaranghorbani/Documents/teeth-scriptus-pricei2/data/scriptus_bw/images/Extant/Tragelaphini/Tragelaphus/scriptus/",i,"/bw")
   file_list_BW_extant <- list.files(path, recursive = TRUE, full.names = TRUE)
   
   #Import the BW image files.
@@ -47,7 +47,7 @@ for (i in c("LM1","LM2","LM3","UM1","UM2","UM3")){
 
 
 #Save the list
-save(data, file = "/Users/gregorymatthews/Dropbox/teeth-scriptus-pricei/data/teethdata_scriptus_pricei.RData")
+save(data, file = "/Users/nastaranghorbani/Documents/teeth-scriptus-pricei2/data/teethdata_scriptus_pricei.RData")
 
 
 
@@ -76,11 +76,11 @@ data_for_matlab[[i]][["pricei"]] <- do.call(rbind,data[[i]][["pricei"]])
 
 
 for (i in c("LM1", "LM2", "LM3", "UM1", "UM2", "UM3")) {print(i)
-  write.csv(data_for_matlab[[i]][["scriptus"]],file = paste0("/Users/gregorymatthews/Dropbox/teeth-scriptus-pricei/data/matlab/data_",i,"_scriptus.csv"), row.names = FALSE)
-  write.csv(data_for_matlab[[i]][["pricei"]],file = paste0("/Users/gregorymatthews/Dropbox/teeth-scriptus-pricei/data/matlab/data_",i,"_pricei.csv"), row.names = FALSE)
+  write.csv(data_for_matlab[[i]][["scriptus"]],file = paste0("/Users/nastaranghorbani/Documents/teeth-scriptus-pricei2/data/matlab/data_",i,"_scriptus.csv"), row.names = FALSE)
+  write.csv(data_for_matlab[[i]][["pricei"]],file = paste0("/Users/nastaranghorbani/Documents/teeth-scriptus-pricei2/data/matlab/data_",i,"_pricei.csv"), row.names = FALSE)
 }
 
-
+# run teeth_scriptus_pricei_find-mean_combined.m in matlab
 
 
 
