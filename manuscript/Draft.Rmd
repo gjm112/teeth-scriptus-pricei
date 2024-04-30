@@ -10,7 +10,7 @@ output:
 abstract: 
   
 keywords: null
-bibliography: /Users/nastaranghorbani/Documents/teeth-scriptus-pricei2/manuscript/bibliography.bib
+bibliography: /Users/gregorymatthews/Dropbox/teeth-scriptus-pricei/manuscript/bibliography.bib
 authors:
 - name: Nastaran Ghorbani
   affiliation: Department of Mathematics and Statistics, Loyola University Chicago
@@ -63,6 +63,10 @@ For the analysis part, we again used R. As always, data was loaded.
 The means of tooth shapes from scriptus and pricei were compared using Hotelling's T-squared test. This multivariate statistical test was chosen for its effectiveness in detecting differences in shape means between the two groups. Therefore, a grouping variable named g was Created where 1 represented "scriptus" and 2 represents "pricei". The length of each group was determined by the length of the corresponding lists in the "scriptus" and "pricei" data. We conducted Hotelling's T-squared test using the hotelling.test function in the Hotelling library.
 
 Also, permutation testing was employed to assess the significance of the observed Hotelling's T-squared statistic. This is a non-parametric approach which involves randomly permuting the group labels and recalculating the test statistic multiple times. The p-value was then calculated based on how often the permuted statistic was greater than or equal to the observed statistic.
+
+$$
+
+$$
 
 ### Distance Based Test:
 

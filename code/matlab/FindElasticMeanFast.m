@@ -1,4 +1,4 @@
-function [mu,q,E] = FindElasticMeanFast(Data)
+[mu,q,E] = FindElasticMeanFast(Data)
 
 %this closes all of the figures currently open
 close all;

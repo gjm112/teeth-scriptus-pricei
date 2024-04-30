@@ -32,9 +32,8 @@ data=[data_scriptus; data_pricei]
 
          ddd = FindPairwiseDistance(teeth_data)
 
-      %Now save the average tooth
+    
         save("/Users/gregorymatthews/Dropbox/teeth-scriptus-pricei/data/matlab/pairwise_distances_"+toothtype(t)+".mat","ddd")
-        
         csvwrite("/Users/gregorymatthews/Dropbox/teeth-scriptus-pricei/data/matlab/pairwise_distances_"+toothtype(t)+".csv",ddd)
 
 end  

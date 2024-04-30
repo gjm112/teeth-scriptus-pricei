@@ -1,4 +1,4 @@
-load("/Users/nastaranghorbani/Documents/teeth-scriptus-pricei2/data/teethdata_scriptus_pricei.RData")
+load("./data/teethdata_scriptus_pricei.RData")
 pvals <- list()
 for (toothtype in c("LM1","LM2","LM3","UM1","UM2","UM3")){print(toothtype)
 
@@ -7,17 +7,16 @@ n_pricei <- length(data[[toothtype]][["pricei"]])
 
 class <- c(rep("scriptus",n_scriptus),rep("pricei",n_pricei))
 
-
 #Run this script first in matlab: pairwise_dist_scriptus_pricei.m
 #Pariwise distances
 #First rows are scriptus and last rows are pricei
-ddd <- read.csv(paste0("/Users/nastaranghorbani/Documents/teeth-scriptus-pricei2/data/matlab/pairwise_distances_",toothtype,".csv"), header = FALSE)
+ddd <- read.csv(paste0("./data/matlab/pairwise_distances_",toothtype,".csv"), header = FALSE)
 ddd <- as.matrix(ddd)
 
 #Distrance based permutation testing.  
 #Based on the test defined in Soto et al 2021
 #1. Use distances based on the shapes projected into the tangent space.  
-#to 2. Use distances in the size-shape space.  (I just need a function that computes distance between shapes tha tpreserves size.)
+#to 2. Use distances in the size-shape space.  (I just need a function that computes distance between shapes that preserves size.)
 
 
 Dbar11 <- sum(ddd[class == "scriptus",class == "scriptus"])/(n_scriptus^2)
@@ -42,8 +41,10 @@ pvals[[toothtype]] <- mean(Sperm >= S)
 
 }
 
+unlist(pvals)
 
-hist(Sperm)
-abline(v = S, col = "red")
+
+# hist(Sperm)
+# abline(v = S, col = "red")
 
 

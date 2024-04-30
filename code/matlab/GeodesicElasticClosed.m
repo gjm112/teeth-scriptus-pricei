@@ -31,11 +31,8 @@ tic
 [q2n,R] = Find_Rotation_and_Seed_unique(q1,q2,1); 
 % this scales it appropriately 
 q2n = q2n/sqrt(InnerProd_Q(q2n,q2n));
-% note sure what this does, maybe project to tangent space?
 q2n = ProjectC(q2n);
-% this takes the SRVFs form back to a closed curve (?)
 p2 = q_to_curve(q2);
-%I think this rotates p2 appropriately? 
 p2n = R*p2;
 %this reads the time elapsed
 %toc
