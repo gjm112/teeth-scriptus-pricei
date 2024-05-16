@@ -14,18 +14,30 @@ library(Hotelling)
 PC_combined$g <- c(rep(1,length(data[[i]][["scriptus"]])),
                            rep(2,length(data[[i]][["pricei"]])))
 
-results <-  hotelling.test(.~g, data = PC_combined)
+PC_combined %>% group_by(g) %>% summarize(mean(V1),
+                                          mean(V2),
+                                          mean(V3),
+                                          mean(V4),
+                                          mean(V5),
+                                          mean(V6),
+                                          mean(V7),
+                                          mean(V8),
+                                          mean(V9),
+                                          mean(V10)
+                                          ) %>% View()
+
+results <-  hotelling.test(.~g, data = PC_combined, var.equal = FALSE)
 results$stats$statistic
 #results <-  hotelling.stat(PC_LM1_combined[PC_LM1_combined$g ==1,-11],PC_LM1_combined[PC_LM1_combined$g ==2,-11])
 #results$statistic
 
 #Permutation
-nsim <- 1000
+nsim <- 10000
 null <- c()
 for (j in 1:nsim){
 temp <- PC_combined
 temp$g <- sample(temp$g, length(temp$g),replace = FALSE)
-null[j] <-  hotelling.test(.~g, data = temp)$stat$statistic
+null[j] <-  hotelling.test(.~g, data = temp, var.equal = FALSE)$stat$statistic
 }
 
 

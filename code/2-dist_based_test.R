@@ -13,6 +13,8 @@ class <- c(rep("scriptus",n_scriptus),rep("pricei",n_pricei))
 ddd <- read.csv(paste0("./data/matlab/pairwise_distances_",toothtype,".csv"), header = FALSE)
 ddd <- as.matrix(ddd)
 
+
+
 #Distrance based permutation testing.  
 #Based on the test defined in Soto et al 2021
 #1. Use distances based on the shapes projected into the tangent space.  
