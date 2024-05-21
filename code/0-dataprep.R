@@ -4,6 +4,7 @@ library(dplyr)
 library(Momocs)
 library(fdasrvf)
 
+#I removed 133B from LM2 Pricei
 #test
 data <- list()
 for (i in c("LM1","LM2","LM3","UM1","UM2","UM3")){
@@ -46,6 +47,7 @@ for (i in c("LM1","LM2","LM3","UM1","UM2","UM3")){
 
 #Save the list
 save(data, file = "./data/teethdata_scriptus_pricei.RData")
+
 
 
 
