@@ -1,5 +1,6 @@
-toothtype = "UM1"
+toothtype = "LM2"
 dddd = readtable("/Users/gregorymatthews/Dropbox/teeth-scriptus-pricei/data/matlab/nas/pairwise_distances_" + toothtype + ".csv")
+%dddd = readtable("/Users/gregorymatthews/Dropbox/teeth-scriptus-pricei/data/matlab/pairwise_distances_" + toothtype + ".csv")
 dddd = table2array(dddd)
 %$dddd(40,:) = []
 %dddd(:,40) = []

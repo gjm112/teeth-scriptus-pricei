@@ -1,11 +1,12 @@
-cd /Users/gregorymatthews/Dropbox/teeth-scriptus-pricei/code/matlab
+cd /Users/gregorymatthews/Dropbox/teeth-scriptus-pricei/code/matlab/nas
 toothtype = {"LM1","LM2","LM3","UM1","UM2","UM3"}
 species = {"pricei", "scriptus"}
 for t=1:6
 
-        data_scriptus = readtable("/Users/gregorymatthews/Dropbox/teeth-scriptus-pricei/data/matlab/data_"+toothtype(t)+"_scriptus.csv")
-        data_pricei = readtable("/Users/gregorymatthews/Dropbox/teeth-scriptus-pricei/data/matlab/data_"+toothtype(t)+"_pricei.csv")
-data=[data_scriptus; data_pricei]
+        
+ = readtable("/Users/gregorymatthews/Dropbox/teeth-scriptus-pricei/data/matlab/nas/data_"+toothtype(t)+"_scriptus.csv")
+        data_pricei = readtable("/Users/gregorymatthews/Dropbox/teeth-scriptus-pricei/data/matlab/nas/data_"+toothtype(t)+"_pricei.csv")
+data=[data_scriptus; data_pricei] 
         
         %get the number of rows and cols
         n_rows = size(data,1);
