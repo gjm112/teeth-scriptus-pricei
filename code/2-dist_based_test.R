@@ -29,7 +29,7 @@ S <- ((n_scriptus*n_pricei)/((n_scriptus+n_pricei)))*(2*Dbar12 - (Dbar11 + Dbar2
 
 #Now permute
 Sperm <- c()
-nsim <- 100000
+nsim <- 10000
 for (i in 1:nsim){print(i)
 class_perm <- sample(class,length(class),replace = FALSE)
 Dbar11 <- sum(ddd[class_perm == "scriptus",class_perm == "scriptus"])/(n_scriptus^2)

@@ -6,7 +6,7 @@ length(data[["LM1"]][["pricei"]])
 
 
 pvals_hotelling = list()
-for (i in c("LM1", "LM2", "LM3", "UM1", "UM2", "UM3")){
+for (i in c("LM1", "LM2", "LM3", "UM1", "UM2", "UM3")){print(i)
   
 PC_combined <- read.csv(paste0("./data/matlab/PC_feat_",i,"_combined.csv"), header = FALSE)
 
@@ -24,7 +24,7 @@ PC_combined %>% group_by(g) %>% summarize(mean(V1),
                                           mean(V8),
                                           mean(V9),
                                           mean(V10)
-                                          ) %>% View()
+                                          ) 
 
 results <-  hotelling.test(.~g, data = PC_combined, var.equal = FALSE)
 results$stats$statistic
@@ -34,7 +34,7 @@ results$stats$statistic
 #Permutation
 nsim <- 10000
 null <- c()
-for (j in 1:nsim){
+for (j in 1:nsim){print(j)
 temp <- PC_combined
 temp$g <- sample(temp$g, length(temp$g),replace = FALSE)
 null[j] <-  hotelling.test(.~g, data = temp, var.equal = FALSE)$stat$statistic
