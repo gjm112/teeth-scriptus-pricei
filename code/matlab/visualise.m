@@ -1,14 +1,13 @@
-toothtype = "LM2"
+toothtype = "UM2"
 dddd = readtable("/Users/gregorymatthews/Dropbox/teeth-scriptus-pricei/data/matlab/nas/pairwise_distances_" + toothtype + ".csv")
 %dddd = readtable("/Users/gregorymatthews/Dropbox/teeth-scriptus-pricei/data/matlab/pairwise_distances_" + toothtype + ".csv")
 dddd = table2array(dddd)
 %$dddd(40,:) = []
 %dddd(:,40) = []
-
-
+size(dddd)
 
 figure(1);clf
-imagesc(dddd)
+imagesc(ddd)
 colorbar
 
 y = mdscale(dddd, 2)

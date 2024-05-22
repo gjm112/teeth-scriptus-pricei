@@ -1,3 +1,4 @@
+set.seed(20240521)
 library(jpeg)
 library(tidyverse)
 library(dplyr)
@@ -44,9 +45,14 @@ for (i in c("LM1","LM2","LM3","UM1","UM2","UM3")){
   
 }
 
-
+#Manual fixes:
+#All teeth should fo clock wise.  These two are going COUNTER clockwise.  Reverse them:
+#1 IMG_1375       LM1 scriptus  1191.361  -51754.13
+#2     M21B       UM2   pricei  1426.617    -68316.71
+data[["UM2"]][["pricei"]][["M21B"]] <- data[["UM2"]][["pricei"]][["M21B"]][nrow(data[["UM2"]][["pricei"]][["M21B"]]):1,]
+#data[["LM1"]][["scriptus"]][["IMG_1375"]] <- data[["LM1"]][["scriptus"]][["IMG_1375"]][nrow(data[["LM1"]][["scriptus"]][["IMG_1375"]]):1,]
 #Save the list
-#save(data, file = "./data/teethdata_scriptus_pricei.RData")
+save(data, file = "./data/teethdata_scriptus_pricei.RData")
 
 
 

@@ -1,3 +1,4 @@
+set.seed(20240521)
 # run teeth_scriptus_pricei_find-mean_combined.m in matlab
 load("./data/teethdata_scriptus_pricei.RData")
 #Scriptus is the first n rows, pricei is the last some rows. 
@@ -44,6 +45,7 @@ null[j] <-  hotelling.test(.~g, data = temp, var.equal = FALSE)$stat$statistic
 pvals_hotelling[[i]] <- mean(null >= results$stats$statistic)
 }
 
+unlist(pvals_hotelling)
 
 
 
