@@ -3,10 +3,15 @@ cd /Users/gregorymatthews/Dropbox/teeth-scriptus-pricei-size/code/matlab_size/
 
 toothtype = {"LM1","LM2","LM3","UM1","UM2","UM3"}
 species = {"pricei", "scriptus"}
-t = 1
-outbeta = table2array(readtable("/Users/gregorymatthews/Dropbox/teeth-scriptus-pricei-size/data/matlab/nas/out_beta_" + toothtype(t) + "_combined.csv"))
-outbeta_scriptus = table2array(readtable("/Users/gregorymatthews/Dropbox/teeth-scriptus-pricei-size/data/matlab/nas/out_beta_"+toothtype(t)+"_scriptus.csv"))
-outbeta_pricei = table2array(readtable("/Users/gregorymatthews/Dropbox/teeth-scriptus-pricei-size/data/matlab/nas/out_beta_"+toothtype(t)+"_pricei.csv"))
+for t= 1:6
+%outbeta = table2array(readtable("/Users/gregorymatthews/Dropbox/teeth-scriptus-pricei-size/data/matlab/nas/out_beta_" + toothtype(t) + "_combined.csv"))
+%outbeta_scriptus = table2array(readtable("/Users/gregorymatthews/Dropbox/teeth-scriptus-pricei-size/data/matlab/nas/out_beta_"+toothtype(t)+"_scriptus.csv"))
+%outbeta_pricei = table2array(readtable("/Users/gregorymatthews/Dropbox/teeth-scriptus-pricei-size/data/matlab/nas/out_beta_"+toothtype(t)+"_pricei.csv"))
+
+outbeta = table2array(readtable("/Users/gregorymatthews/Dropbox/teeth-scriptus-pricei-size/data/matlab/out_beta_" + toothtype(t) + "_combined.csv"))
+outbeta_scriptus = table2array(readtable("/Users/gregorymatthews/Dropbox/teeth-scriptus-pricei-size/data/matlab/out_beta_"+toothtype(t)+"_scriptus.csv"))
+outbeta_pricei = table2array(readtable("/Users/gregorymatthews/Dropbox/teeth-scriptus-pricei-size/data/matlab/out_beta_"+toothtype(t)+"_pricei.csv"))
+
 
 outbeta = ReSampleCurve(outbeta,100);
 outbeta_scriptus = ReSampleCurve(outbeta_scriptus,100);
@@ -25,13 +30,17 @@ outbetanew_pricei= q_to_curve(qnew_pricei)
 outbetanew_scriptus= q_to_curve(qnew_scriptus)
 
 
+csvwrite(wd+"/teeth-scriptus-pricei-size/data/matlab/out_betanew_"+toothtype(t)+"_combined.csv",outbetanew_combined)
+csvwrite(wd+"/teeth-scriptus-pricei-size/data/matlab/out_betanew_"+toothtype(t)+"_pricei.csv",outbetanew_pricei)
+csvwrite(wd+"/teeth-scriptus-pricei-size/data/matlab/out_betanew_"+toothtype(t)+"_scriptus.csv",outbetanew_scriptus)
 
+end
 
-figure(1),clf
-plot(outbeta(1,:) - mean(outbeta(1,:)) , outbeta(2,:) - mean(outbeta(2,:)), "black");
-hold on;
-plot(outbetanew_scriptus(1,:) - mean(outbetanew_scriptus(1,:)), outbetanew_scriptus(2,:)- mean(outbetanew_scriptus(2,:)),"blue");
-hold on;
-plot(outbetanew_pricei(1,:)- mean(outbetanew_pricei(1,:)), outbetanew_pricei(2,:)- mean(outbetanew_pricei(2,:)), "green");
+%%figure(1),clf
+%plot(outbeta(1,:) - mean(outbeta(1,:)) , outbeta(2,:) - mean(outbeta(2,:)), "black");
+%hold on;
+%plot(outbetanew_scriptus(1,:) - mean(outbetanew_scriptus(1,:)), outbetanew_scriptus(2,:)- mean(outbetanew_scriptus(2,:)),"blue");
+%hold on;
+%plot(outbetanew_pricei(1,:)- mean(outbetanew_pricei(1,:)), outbetanew_pricei(2,:)- mean(outbetanew_pricei(2,:)), "green");
 %plot(outbeta_pricei(1,:), outbeta_pricei(2,:), col = "red");
 

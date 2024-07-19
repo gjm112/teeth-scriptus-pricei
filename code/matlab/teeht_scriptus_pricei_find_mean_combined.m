@@ -1,5 +1,8 @@
 wd = "/Users/gregorymatthews/Dropbox"
-cd /Users/gregorymatthews/Dropbox/teeth-scriptus-pricei/code/matlab
+%The data set that gets read in here is the same for both shape only and
+%size-and-shape.  The difference is that that functions here do not remove
+%the size
+cd /Users/gregorymatthews/Dropbox/teeth-scriptus-pricei/code/matlab/
 toothtype = {"LM1","LM2","LM3","UM1","UM2","UM3"}
 species = {"pricei", "scriptus"}
 for t=1:6

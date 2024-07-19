@@ -1,9 +1,10 @@
 set.seed(20240521)
+#Is 900000 pixels a square inch?  
 # run teeth_scriptus_pricei_find-mean_combined.m in matlab
 load("./data/teethdata_scriptus_pricei.RData")
 #Scriptus is the first n rows, pricei is the last some rows. 
-length(data[["LM1"]][["scriptus"]])
-length(data[["LM1"]][["pricei"]])
+length(data[["LM2"]][["scriptus"]])
+length(data[["LM2"]][["pricei"]])
 
 
 pvals_hotelling = list()
@@ -33,7 +34,7 @@ results$stats$statistic
 #results$statistic
 
 #Permutation
-nsim <- 10000
+nsim <- 100000
 null <- c()
 for (j in 1:nsim){print(j)
 temp <- PC_combined
@@ -41,11 +42,14 @@ temp$g <- sample(temp$g, length(temp$g),replace = FALSE)
 null[j] <-  hotelling.test(.~g, data = temp, var.equal = FALSE)$stat$statistic
 }
 
+hist(null, xlim = c(0,results$stats$statistic))
+abline(v = results$stats$statistic, col = "red", lwd = 2)
 
 pvals_hotelling[[i]] <- mean(null >= results$stats$statistic)
 }
 
 unlist(pvals_hotelling)
+
 
 
 

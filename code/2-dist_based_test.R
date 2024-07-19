@@ -1,9 +1,8 @@
 set.seed(20240521)
 load("./data/teethdata_scriptus_pricei.RData")
 pvals <- list()
-#for (toothtype in c("LM1","LM2","LM3","UM1","UM2","UM3")){print(toothtype)
-  for (toothtype in c("LM1","LM2","LM3")){print(toothtype)
-
+for (toothtype in c("LM1","LM2","LM3","UM1","UM2","UM3")){print(toothtype)
+  
 n_scriptus <- length(data[[toothtype]][["scriptus"]])
 n_pricei <- length(data[[toothtype]][["pricei"]])
 
@@ -14,6 +13,9 @@ class <- c(rep("scriptus",n_scriptus),rep("pricei",n_pricei))
 #First rows are scriptus and last rows are pricei
 ddd <- read.csv(paste0("./data/matlab/pairwise_distances_",toothtype,".csv"), header = FALSE)
 ddd <- as.matrix(ddd)
+
+image(ddd)
+
 
 
 
@@ -42,6 +44,9 @@ Sperm[i] <- ((n_scriptus*n_pricei)/((n_scriptus+n_pricei)))*(2*Dbar12 - (Dbar11 
 }
 
 pvals[[toothtype]] <- mean(Sperm >= S)
+
+hist(Sperm, main = toothtype, xlim = c(0, S + .05))
+abline(v = S, col = "red")
 
 }
 

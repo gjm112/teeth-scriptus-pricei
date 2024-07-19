@@ -87,7 +87,11 @@ for (i in c("LM1", "LM2", "LM3", "UM1", "UM2", "UM3")) {print(i)
 }
 
 # run teeth_scriptus_pricei_find-mean_combined.m in matlab
-
+nnn <- data.frame()
+for (q in c("LM1","LM2","LM3","UM1","UM2","UM3")){
+print(q)
+print(unlist(lapply(data[[q]], length)))
+}
 
 
 
