@@ -30,9 +30,9 @@ outbetanew_pricei= q_to_curve(qnew_pricei)
 outbetanew_scriptus= q_to_curve(qnew_scriptus)
 
 
-csvwrite(wd+"/teeth-scriptus-pricei-size/data/matlab/out_betanew_"+toothtype(t)+"_combined.csv",outbetanew_combined)
-csvwrite(wd+"/teeth-scriptus-pricei-size/data/matlab/out_betanew_"+toothtype(t)+"_pricei.csv",outbetanew_pricei)
-csvwrite(wd+"/teeth-scriptus-pricei-size/data/matlab/out_betanew_"+toothtype(t)+"_scriptus.csv",outbetanew_scriptus)
+%csvwrite(wd+"/teeth-scriptus-pricei-size/data/matlab/out_betanew_"+toothtype(t)+"_combined.csv",outbetanew_combined)
+%csvwrite(wd+"/teeth-scriptus-pricei-size/data/matlab/out_betanew_"+toothtype(t)+"_pricei.csv",outbetanew_pricei)
+%csvwrite(wd+"/teeth-scriptus-pricei-size/data/matlab/out_betanew_"+toothtype(t)+"_scriptus.csv",outbetanew_scriptus)
 
 end
 

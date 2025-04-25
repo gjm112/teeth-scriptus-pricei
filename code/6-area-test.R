@@ -58,7 +58,15 @@ t.test(dat$area[dat$toothtype == "UM1"] ~ dat$species[dat$toothtype == "UM1"] )
 t.test(dat$area[dat$toothtype == "UM2"] ~ dat$species[dat$toothtype == "UM2"] )
 t.test(dat$area[dat$toothtype == "UM3"] ~ dat$species[dat$toothtype == "UM3"] )
 
+pvals <- c(t.test(dat$area[dat$toothtype == "LM1"] ~ dat$species[dat$toothtype == "LM1"] )$p.value,
+t.test(dat$area[dat$toothtype == "LM2"] ~ dat$species[dat$toothtype == "LM2"] )$p.value,
+t.test(dat$area[dat$toothtype == "LM3"] ~ dat$species[dat$toothtype == "LM3"] )$p.value,
+t.test(dat$area[dat$toothtype == "UM1"] ~ dat$species[dat$toothtype == "UM1"] )$p.value,
+t.test(dat$area[dat$toothtype == "UM2"] ~ dat$species[dat$toothtype == "UM2"] )$p.value,
+t.test(dat$area[dat$toothtype == "UM3"] ~ dat$species[dat$toothtype == "UM3"] )$p.value)
 
+p.adjust(pvals, method = "fdr")
+p.adjust(pvals, method = "bonf")
 
 
 
